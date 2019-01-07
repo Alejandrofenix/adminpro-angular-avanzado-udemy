@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashbord',
-  templateUrl: './dashbord.component.html',
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
   styles: []
 })
-export class DashbordComponent implements OnInit {
+export class SidebarComponent implements OnInit {
 
   constructor() { }
 
