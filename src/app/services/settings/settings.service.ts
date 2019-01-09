@@ -26,7 +26,7 @@ export class SettingsService {
 
       this.aplicarTema( this.ajustes.tema );
 
-    }else {
+    } else {
       // console.log( 'Usando valores por defecto' );
       this.aplicarTema( this.ajustes.tema );
     }
