@@ -18,6 +18,15 @@
     width: 50px;
 }
 
+.img-75 {
+    width: 75px;
+}
+
+.img-100 {
+    width: 100px;
+    height: 100px;
+}
+
 .fondo-negro {
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
