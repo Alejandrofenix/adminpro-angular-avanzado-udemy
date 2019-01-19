@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -14,16 +14,18 @@ import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { VerificatokenGuard } from '../services/guards/verificatoken.guard';
 
 
 
 const pagesRoutes: Routes = [
-    {
-        path: '',
-        component: PagesComponent,
-        canActivate: [ LoginGuardGuard     ],
-        children: [
-            { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },
+  
+            { 
+                path: 'dashboard', 
+                component: DashboardComponent, 
+                canActivate: [VerificatokenGuard],
+                data: { titulo: 'Dashboard' },
+             },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' } },
             { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graicos' } },
             { path: 'promesas', component: PromesasComponent , data: { titulo: 'Promesas' }},
@@ -47,8 +49,8 @@ const pagesRoutes: Routes = [
             { path: 'medico/:id', component: MedicoComponent,  data: { titulo: 'Actualizar Medico ' }},
 
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
-        ]
-    }
+        
+    
 ];
 
 

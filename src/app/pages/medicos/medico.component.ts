@@ -42,7 +42,6 @@ export class MedicoComponent implements OnInit {
 
     this._modalUploadService.notificacion
         .subscribe( (resp: any ) => {
-          console.log(resp);
           this.medico.img = resp.medico.img;
         } );
   }
@@ -58,8 +57,7 @@ export class MedicoComponent implements OnInit {
 
   guardarMedico( f: NgForm ) {
 
-    console.log( f.valid );
-    console.log( f.value );
+   
 
     if ( f.invalid ) {
       return;
@@ -81,7 +79,6 @@ export class MedicoComponent implements OnInit {
       this._hospitalService.obtenerHospital(id)
           .subscribe( hospital => {
             this.hospital = hospital;
-            console.log(hospital);
             
           });
           
