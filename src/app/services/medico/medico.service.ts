@@ -41,7 +41,7 @@ export class MedicoService {
 
     let url = URL_SERVICIOS + '/busqueda/coleccion/medicos/' + termino;
     return this.http.get( url )
-                .map( (resp: any) => resp.medicos );
+               .pipe(map( (resp: any) => resp.medicos ));
 
   }
 
@@ -87,11 +87,6 @@ export class MedicoService {
 
   }
 
-  cargarMedico( id: string) {
-    let url = URL_SERVICIOS + '/medico/' + id;
-    
-    return this.http.get(url)
-                .pipe(map( (resp: any) => resp.medico  ));
-  }
+  
 
 }
